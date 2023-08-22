@@ -1,17 +1,19 @@
-const output = document.querySelector(".number");
 const knap = document.getElementById("knap");
-let min = document.querySelector(".min").value;
-let max = document.querySelector(".max").value;
 
 function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+let number = generateRandomNumber(1, 100);
 knap.addEventListener("click", () => {
-  let min = document.querySelector(".min").value;
-  let max = document.querySelector(".max").value;
-  let number = generateRandomNumber(min, max);
-  output.textContent = number;
-  console.log(min);
-  console.log(max);
+  let guess = document.getElementById("guess").value;
+  console.log(number);
+  if (guess === number) {
+    console.log("true");
+  }
+  if (guess > number) {
+    console.log("for højt");
+  }
+  if (guess < number) {
+    console.log("for lavt");
+  }
 });
