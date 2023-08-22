@@ -48,6 +48,8 @@ input {
   text-align: center;
   width: 50px;
   padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 input::-webkit-outer-spin-button,
