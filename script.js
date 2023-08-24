@@ -5,10 +5,10 @@ const final = document.querySelector(".final");
 
 knap.addEventListener("click", () => {
   let input = document.getElementById("guess").value;
-  let number = parseInt(input);
-  momsberegner(number, 25);
+  let beloeb = parseInt(input);
+  momsberegner(beloeb);
 });
 
-function momsberegner(number, moms) {
-  final.textContent = `${number + number * (moms / 100)}`;
+function momsberegner(number, moms = "0.25") {
+  final.textContent = `${number + number * moms}`;
 }
