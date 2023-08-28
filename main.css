@@ -1,11 +1,12 @@
 * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --bgcolor: #181818;
 }
 
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #103402;
+  background-color: var(--bgcolor);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,11 @@ section {
   background-color: #f5ece2;
   border-radius: 1rem;
   text-align: center;
-  color: #103402;
+  color: var(--bgcolor);
+}
+.respons {
+  display: flex;
+  gap: 0.2rem;
 }
 
 button {
@@ -25,13 +30,13 @@ button {
   border-radius: 1rem;
   border: none;
   background-color: rgb(247, 188, 116);
-  color: #103402;
+  color: var(--bgcolor);
   transition: 0.4s ease;
   cursor: pointer;
   width: 100%;
 }
 button:hover {
-  background-color: #103402;
+  background-color: var(--bgcolor);
   color: rgb(247, 188, 116);
   transition: 0.4s ease;
 }
@@ -46,10 +51,12 @@ button:hover {
 }
 input {
   text-align: center;
-  width: 50px;
+  width: 100px;
   padding: 0.5rem 0.2rem 0.5rem 0.2rem;
   border: none;
   border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 input::-webkit-outer-spin-button,
@@ -64,4 +71,8 @@ h4 {
 
 h1 {
   margin-bottom: 0;
+}
+
+h2 {
+  min-height: 10px;
 }
