@@ -1,39 +1,44 @@
-const output = document.querySelector(".number");
-const knap = document.getElementById("knap");
+let output = document.querySelector(".number");
+let guess;
+let max = 100;
+let min = 0;
 
-const low = document.getElementById("low");
-const high = document.getElementById("high");
-const sandt = document.getElementById("sandt");
+const startbtn = document.getElementById("knap");
+const lowbtn = document.getElementById("low");
+const highbtn = document.getElementById("high");
+const sandtbtn = document.getElementById("sandt");
 
-let tal = document.querySelector(".tal").value;
+let numberOfGuesses = 0;
 
-function generateRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+function comGuess() {
+  numberOfGuesses++;
+  guess = Math.round((min + max) / 2);
+  output.textContent = guess;
 }
 
-knap.addEventListener("click", () => {
-  let number = generateRandomNumber(0, 100);
-  output.textContent = number;
+startbtn.addEventListener("click", () => {
+  min = 0;
+  max = 100;
+  lowbtn.disabled = false;
+  highbtn.disabled = false;
+  sandtbtn.disabled = false;
+  startbtn.textContent = "Start again";
+  comGuess();
 });
 
 low.addEventListener("click", () => {
-  let first = document.querySelector(".number").textContent;
-  let output = document.querySelector(".number");
-  let number = generateRandomNumber(0, first);
-  output.textContent = number;
-  console.log(number);
+  max = guess;
+  comGuess();
 });
 
 high.addEventListener("click", () => {
-  let first = document.querySelector(".number").textContent;
-  let output = document.querySelector(".number");
-  let number = generateRandomNumber(first, 100);
-  output.textContent = number;
-  console.log(number);
+  min = guess;
+  comGuess();
 });
 
-sandt.addEventListener("click", () => {
-  let output = document.querySelector(".number");
-
+sandtbtn.addEventListener("click", () => {
   output.textContent = "YES - I KNEW IT";
+  lowbtn.disabled = true;
+  highbtn.disabled = true;
+  sandtbtn.disabled = true;
 });

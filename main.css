@@ -41,6 +41,11 @@ button:hover {
   transition: 0.4s ease;
 }
 
+button:disabled {
+  background-color: grey;
+  opacity: 20%;
+}
+
 .flex {
   display: flex;
   margin-bottom: 1rem;
